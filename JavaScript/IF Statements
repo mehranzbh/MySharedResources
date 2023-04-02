@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+<script>
+    var num1 = 30;
+    var num2 = 20;
+    if (num1 < num2){
+        alert('num1>num2')
+    }
+    else if(num1 === num2){
+                 alert ('numbers are the same')
+    }
+    
+    else {
+        
+        alert ('Else is activated')
+    }
+
+</script>
+
+	
+</body>
+</html>
