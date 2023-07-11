@@ -1,0 +1,68 @@
+# creating tables for the LOAD LOCAL DATA process to fasten the slow speed of importing data to MySQL
+
+CREATE TABLE carsinfo( 
+ID INT not NULL primary key,
+Make varchar(20),
+Model varchar(50),
+Typee varchar(20),	
+DriveTrain varchar(20),
+MSRP varchar(20),
+Invoice varchar(20),
+EngineSize double,
+Cylinders INT,
+Horsepower INT,
+MPG_City INT,
+MPG_Highway INT,
+Weight INT,
+Wheelbase INT,
+Length INT
+ );
+
+
+
+CREATE TABLE brandcountry( 
+Make varchar(20),
+Origin varchar(50)
+);	
+
+
+
+# How to import data when importing process is slow in MySQL (tables should be created before)
+
+
+LOAD DATA LOCAL INFILE 'E:\\Agile\\Code and DB\\SQLproject\\carsinfo.csv' INTO TABLE carsinfo
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(ID,Make,Model,Typee,DriveTrain,MSRP,Invoice,EngineSize,Cylinders,Horsepower,MPG_City,MPG_Highway,Weight,Wheelbase,Length);
+
+
+LOAD DATA LOCAL INFILE "E:\\Agile\\Code and DB\\SQLproject\\brandcountry.csv" INTO TABLE brandcountry
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(Make,Origin)
+
+LOAD DATA LOCAL INFILE "E:\\Agile\\Code and DB\\SQLproject\\bigdata\\data1.csv" INTO TABLE data1
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(iso_code, continent, location, date, total_cases, new_cases, new_cases_smoothed, total_deaths, new_deaths, new_deaths_smoothed, total_cases_per_million, new_cases_per_million, new_cases_smoothed_per_million, total_deaths_per_million, new_deaths_per_million, new_deaths_smoothed_per_million, reproduction_rate, icu_patients, icu_patients_per_million, hosp_patients, hosp_patients_per_million, weekly_icu_admissions, weekly_icu_admissions_per_million, weekly_hosp_admissions, weekly_hosp_admissions_per_million, new_tests, total_tests, total_tests_per_thousand, new_tests_per_thousand, new_tests_smoothed, new_tests_smoothed_per_thousand, positive_rate, tests_per_case, tests_units);
+
+
+
+#to solve the LOAD LOCAL DATA problem:
+SET GLOBAL local_infile=1;
+
+quit
+\connect root@localhost:3306
+cd C:\Program Files\MySQL\MySQL Server 8.0\bin
+mysql --local-infile=1 -u root -p
+# enter password
+
+# https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client
+# SET GLOBAL local_infile=1;
+# quit and then import the data
+
+# deleting data problem in mysql
+SET SQL_SAFE_UPDATES = 0;

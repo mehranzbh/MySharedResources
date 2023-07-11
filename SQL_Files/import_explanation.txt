@@ -1,0 +1,19 @@
+# the import time was exteremly long, I decided to use 'LOAD DATA LOCAL INFILE"
+# There are two main codes written for this : 1.Creating table 2.importing csv data to the created table
+
+1. Table should be created first
+
+2. importing csv file (using 'LOAD DATA LOCAL INFILE')
+LOAD DATA LOCAL INFILE 'E:\\Agile\\Code and DB\\SQLproject\\carsinfo.csv' INTO TABLE carsinfo
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(ID,Make,Model,Typee,DriveTrain,MSRP,Invoice,EngineSize,Cylinders,Horsepower,MPG_City,MPG_Highway,Weight,Wheelbase,Length);
+
+I faced an issue in LOAD LOCAL DATA:
+ERROR 3950 (42000): Loading local data is disabled; this must be
+enabled on both the client and server side.
+and solved it using : 
+https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client
+
+So the data is now imported. 

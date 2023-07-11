@@ -1,0 +1,20 @@
+# How to import data when importing process is slow in MySQL (tables should be created before)
+
+
+LOAD DATA LOCAL INFILE 'E:\\Agile\\Code and DB\\SQLproject\\carsinfo.csv' INTO TABLE carsinfo
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(ID,Make,Model,Typee,DriveTrain,MSRP,Invoice,EngineSize,Cylinders,Horsepower,MPG_City,MPG_Highway,Weight,Wheelbase,Length);
+
+
+LOAD DATA LOCAL INFILE "E:\\Agile\\Code and DB\\SQLproject\\brandcountry.csv" INTO TABLE brandcountry
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 LINES
+(Make,Origin)
+
+
+
+#to solve the LOAD LOCAL DATA problem:
+# https://stackoverflow.com/questions/59993844/error-loading-local-data-is-disabled-this-must-be-enabled-on-both-the-client

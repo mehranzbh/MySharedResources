@@ -1,0 +1,24 @@
+--When I tried to change column data type from varchar to int, it didn't work.
+ALTER TABLE carsinfo
+ALTER COLUMN Invoice Numeric
+
+--So the CAST function should be used and the new column should be replaced with the previous column which had varchar data type.
+Select Cast(Cylinders as int) from joinedtables
+
+
+--for replacing the columns temp table approach has been taken.
+
+--temp table
+
+DROP TABLE IF EXISTS temptable
+CREATE TABLE temptable 
+(Cylindersss int )
+ INSERT INTO temptable
+ Select Cast(Cylinders as int) from joinedtables
+
+INSERT INTO joinedtables(Cylinderss)
+Values ((Select Cast(Cylinders as int) from joinedtables));
+
+
+SELECT * from joinedtables as jj
+INNER JOIN temptable as tt ON jj.Cylinders=tt.Cylindersss;

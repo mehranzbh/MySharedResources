@@ -1,0 +1,24 @@
+# After Importing Data (importing data is explained in ***.txt)
+
+
+select * from cars_db.carsinfo;
+
+-- finding the MSRP to Invoice percentage
+select Make, Model, MSRP, Invoice, (Invoice/MSRP)*100 as marketpercentage
+from cars_db.carsinfo
+where typee like "%dan%"
+order by marketpercentage;
+
+-- finding most powerful sports cars
+select Make, Model, Typee, Invoice, EngineSize, Horsepower, Weight
+from cars_db.carsinfo
+where Horsepower > 170 
+and typee = 'Sports'
+order by Horsepower desc;
+
+
+-- finding most powerful car in each brand
+select Make, Model, MAX(Horsepower) as MaxHorsePower, Typee, Invoice, EngineSize, Horsepower, Weight
+from cars_db.carsinfo
+group by Make
+order by Horsepower desc;

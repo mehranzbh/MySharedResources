@@ -1,0 +1,26 @@
+ALTER TABLE carsinfo
+ALTER COLUMN Invoice Numeric
+
+ALTER TABLE carsinfo
+ALTER COLUMN MSRP Numeric
+
+ALTER TABLE carsinfo
+ALTER COLUMN EngineSize float
+
+ALTER TABLE carsinfo
+ALTER COLUMN Cylinders Numeric
+
+ALTER TABLE carsinfo
+ALTER COLUMN Horsepower Numeric
+
+ALTER TABLE carsinfo
+ALTER COLUMN MPG_City Numeric
+
+ALTER TABLE carsinfo
+ALTER COLUMN MPG_Highway Numeric
+
+ALTER TABLE carsinfo
+ALTER COLUMN Weight Numeric
+
+ALTER TABLE carsinfo
+ALTER COLUMN Wheelbase Numeric
