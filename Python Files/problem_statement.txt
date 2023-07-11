@@ -1,0 +1,18 @@
+We want to design an app that get a bill amount, and flatmates' names and days that flatmates
+were in the house. Then calculate the amount of money each flatmate should pay, based on the 
+number of the days they were in the house.
+
+we also want that the app generates a pdf report that contains the period, and the flatmates 
+names with the amount of money each flatmate should pay.
+
+Bill  
+    amount
+    period
+
+flatmates
+    name
+    days_in_home
+    pays
+
+pdf_report
+    generate (period, Bill amount ,flatmates names, flatmates_pays)
