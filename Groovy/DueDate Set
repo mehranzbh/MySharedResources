@@ -1,0 +1,74 @@
+import java.util.Calendar
+import java.util.Date
+import java.text.*
+
+
+// The issue key
+def issueKey = 'KBD-1'
+
+// Fetch the issue object from the key
+def issue = get("/rest/api/2/issue/${issueKey}")
+        .header('Content-Type', 'application/json')
+        .asObject(Map)
+        .body
+
+// Get all the fields from the issue as a Map
+def fields = issue.fields as Map
+
+// Get the Custom field to get the option value from
+def customField = get("/rest/api/2/field")
+        .asObject(List)
+        .body
+        .find {
+                (it as Map).name == 'BugFix/HotFix'
+        } as Map
+
+assert customField : "Failed to find custom field with given name"
+
+def value = (fields[customField.id] as Map)?.value
+
+
+//getting field createddate content using API
+def customFieldName = 'customfield_10029'
+def result = get("/rest/api/2/issue/${issueKey}?fields=${customFieldName}")
+        .header('Content-Type', 'application/json')
+        .asObject(Map)
+    def createddatestring = result.body.fields[customFieldName] as String
+    
+    
+//Changing string to date format
+def createddatestring2 = createddatestring.substring(0,10)+ " " +  createddatestring.substring(11,19)
+def pattern = "yyyy-MM-dd hh:mm:ss"
+def createdddate = new SimpleDateFormat(pattern).parse(createddatestring2)
+
+
+//changing string format to calendar and adding 10 days
+Calendar cal = Calendar.getInstance()
+
+cal.setTime(createdddate)
+
+cal.add(Calendar.DATE,10)
+
+
+// Conversion - Converting Calendar format to ISO 8601 String
+Date caldate = cal.getTime()
+SimpleDateFormat sdf
+sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSXXX")
+String caltext = sdf.format(caldate)
+
+
+
+System.out.println caltext
+System.out.println caltext.getClass()
+
+def customFieldId2 = 'customfield_10035'
+def customFieldName2 = "DueDate Custom Field"
+        put("/rest/api/2/issue/${issueKey}")
+           .header("Content-Type", "application/json")
+           .body([
+            fields:[
+                (customFieldId2): caltext
+            ]
+            ])
+          .asString()
+ 
