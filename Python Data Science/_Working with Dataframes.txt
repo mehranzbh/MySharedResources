@@ -1,0 +1,27 @@
+## For reading files there are two methods:         1. reading the file directly      2. changing the working directory to the path the file exist and reading the file.
+
+
+### first method (Reading the file directly)
+import pandas as pd 
+stats = pd.read_csv('E:\Agile\Python Data Science\P4-Demographic-Data.csv')
+stats
+
+
+### Second method is to change the directory
+import os
+pathth = os.getcwd()
+print(pathth)
+os.chdir('E:\Agile\Python Data Science')
+stats2 = pd.read_csv('P4-Demographic-Data.csv')
+stats2
+
+
+# Working with Dataframes
+len(stats)
+stats.columns       #no need to put perentesis
+len(stats.columns)      #checking number of columns
+stats.head()        #number of heads can be specified
+stats.tail()        #number of tails can be specified
+stats.info()    # like str() function in R programming
+stats.describe()        #like summary() in R
+stats.describe().transpose()

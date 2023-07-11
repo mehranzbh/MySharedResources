@@ -1,0 +1,11 @@
+## first method - copy file with the path
+import pandas as pd
+stats = pd.read_csv('E:\Agile\Python Data Science\P4-Demographic-Data.csv')
+
+
+## second method is to changing working directory and load the data
+import os
+os.getcwd()   # to get the working path
+os.chdir('E:\Agile\Python Data Science')    #changing the path to the path that file exists within
+stats = pd.read_csv('P4-Demographic-Data.csv')
+    
