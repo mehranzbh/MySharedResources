@@ -1,0 +1,23 @@
+np.reshape(,,'C') & np.reshape(,,'F') chnaging array to matrix with different inserting pattern --> 'C' is 
+
+l = list(range(20))
+print(l)
+l = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+
+import numpy as np
+CC = np.reshape(l,(4,5),"C")
+FF = np.reshape(l,(4,5),"F")
+
+
+CC = array([[ 0,  1,  2,  3,  4],
+       [ 5,  6,  7,  8,  9],
+       [10, 11, 12, 13, 14],
+       [15, 16, 17, 18, 19]])
+       
+FF = array([[ 0,  4,  8, 12, 16],
+       [ 1,  5,  9, 13, 17],
+       [ 2,  6, 10, 14, 18],
+       [ 3,  7, 11, 15, 19]])
+       
+type(FF) = numpy.ndarray

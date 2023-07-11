@@ -1,0 +1,6 @@
+python -m venv "VirtualFolderName"                #initiating venv
+"VirtualFolderName"\Scripts\activate.bat          #activating venv
+pip list                                          #listing installed packages
+pip freeze                                        #get requiremnets in a installable format and copy to Requierements.txt
+
+pip install -r Requirements.txt                   #install the packages that specified in Requierements.txt file

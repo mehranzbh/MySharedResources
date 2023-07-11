@@ -1,0 +1,41 @@
+import pypyodbc as odbc # pip install pypyodbc
+import pandas as pd     # pip install pandas
+
+
+df = pd.read_csv('carsinfo.csv')
+
+columns = ['ID','Make','Model','Typee','DriveTrain','MSRP','Invoice',
+'EngineSize','Cylinders','Horsepower,MPG_City','MPG_Highway','Weight','Wheelbase','Length']
+
+#create SQL server connection string
+
+DRIVER = 'SQL SERVER'
+SERVER_NAME = 'DESKTOP-LIR9UR4\SQLEXPRESS'
+DATABASE_NAME = 'cars'
+
+def connection_string (driver, server_name, database_name)
+    conn_string = f """
+        DRIVER = {{{SQL SERVER}}};
+        SERVER_NAME = {DESKTOP-LIR9UR4\SQLEXPRESS};
+        DATABASE_NAME ={cars}
+        Trust_Connection=yes;
+    """
+    return conn_string
+
+#create database connection instance
+try:
+    conn = odbc.connect(connection_string (driver, server_name, database_name))
+except odbc.odbc.DatabaseError as e:
+    print('Database error:')
+    print(str(e.value[1]))
+except odbc.Error as e:
+    print('Connection error:')
+    print(str(e.value[1]))
+
+
+# step 3.3 Create a cursor connection
+sql_insert= '''
+    INSERT INTO CARS
+    VALUES ()
+try:
+    odbc
