@@ -1,5 +1,5 @@
 
-resource "google_compute_network" "mynetwork" {
+resource "google_compute_network" "my_network" {
   name = var.network_name
   # RESOURCE properties go here
   auto_create_subnetworks = "true"
