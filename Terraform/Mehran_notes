@@ -2,7 +2,7 @@ Hi,
 
 This is a quick note about this folder.
 
-The Module_L3 (GCP) folder is launched in the GCP instance.
+The Module_L3 (GCP) folder is launched in the GCP instance (project name=terraformtest).
 
 Other folders are small pieces of works which covers different Terraform concepts.
 
