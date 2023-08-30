@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: random-service-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: random-service
+  template:
+    metadata:
+      labels:
+        app: random-service
+    spec:
+      containers:
+      - name: random-service
+        image: gcr.io/gke-test-project-397416/random_service:latest
+        ports:
+        - containerPort: 5001

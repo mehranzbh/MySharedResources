@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: random-service
+spec:
+  selector:
+    app: random-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5001
+  type: LoadBalancer

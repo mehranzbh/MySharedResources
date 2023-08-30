@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: datetime-service-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: datetime-service
+  template:
+    metadata:
+      labels:
+        app: datetime-service
+    spec:
+      containers:
+      - name: datetime-service
+        image: gcr.io/gke-test-project-397416/datetime_service:latest
+        ports:
+        - containerPort: 5000

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aggregator-service-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: aggregator-service
+  template:
+    metadata:
+      labels:
+        app: aggregator-service
+    spec:
+      containers:
+      - name: aggregator-service
+        image: gcr.io/gke-test-project-397416/aggregator_service:latest
+        ports:
+        - containerPort: 5002
