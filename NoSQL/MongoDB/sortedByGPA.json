@@ -1,0 +1,44 @@
+## school> db.students.find().sort({gpa:1})
+
+------------------------------------------
+
+[
+  {
+    _id: ObjectId("64f249f99fa699e8917b3969"),
+    name: 'Ahmed',
+    age: 35,
+    gpa: null
+  },
+  { _id: ObjectId("64f24a269fa699e8917b396a"), name: 'Mike', age: 35 },
+  {
+    _id: ObjectId("64f23a658315194c5dd3b233"),
+    name: 'Kerim',
+    age: 31,
+    gpa: 3.1
+  },
+  {
+    _id: ObjectId("64f238478315194c5dd3b22f"),
+    name: 'Mamad',
+    age: 30,
+    gpa: 3.2
+  },
+  {
+    _id: ObjectId("64f23a658315194c5dd3b232"),
+    name: 'Mamad',
+    age: 30,
+    gpa: 3.2
+  },
+  {
+    _id: ObjectId("64f240cd8e5bac4f949a3ffb"),
+    name: 'Larry',
+    age: 30,
+    gpa: 3.2,
+    graduated: true,
+    gradutionDate: null,
+    registerDate: ISODate("2023-09-01T14:30:00.000Z"),
+    courses: [
+      { coursename: 'math', courseTeacher: 'teacherA' },
+      { coursename: 'physics', courseTeacher: 'teacherB' }
+    ]
+  }
+]
