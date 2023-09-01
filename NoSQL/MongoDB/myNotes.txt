@@ -1,0 +1,15 @@
+Switching:
+	
+	use yourDatabaseName
+	
+	show collections
+	
+------------------------------------------------------------------	
+
+
+db.students.find().sort({name:1})	Ascending by name (string)
+db.students.find().sort({name:-1})	Descending by name
+db.students.find().sort({gpa:-1})	Ascending by gpa (number, double)
+
+
+----------------------------------------------------------------
