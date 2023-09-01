@@ -13,3 +13,13 @@ db.students.find().sort({gpa:-1})	Ascending by gpa (number, double)
 
 
 ----------------------------------------------------------------
+
+
+db.students.find({name:"mamad"})
+db.students.find({graduated: true})
+db.students.find({gradutionDate: null})
+
+
+----------------------------------------------------------------
+
+
