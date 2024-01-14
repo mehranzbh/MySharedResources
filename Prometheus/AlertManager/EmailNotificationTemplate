@@ -1,0 +1,9 @@
+global:
+  smtp_smarthost: smtp.gmail.com:587  # Use the appropriate port (587 for TLS/STARTTLS)
+  smtp_from: your_email@gmail.com
+  smtp_auth_username: your_email@gmail.com
+  smtp_auth_password: your_password
+  smtp_auth_secret: your_app_password  # If you use 2FA, generate an App Password and use it here
+  smtp_tls_cert_file: /path/to/smtp/cert.pem  # Optional: Path to TLS certificate file
+  smtp_tls_key_file: /path/to/smtp/key.pem    # Optional: Path to TLS key file
+  smtp_tls_insecure_skip_verify: true  # Only set to true if you're using self-signed certificates
