@@ -1,0 +1,31 @@
+We are going to design an app that can draw squares and 
+rectangle in a canvas.
+
+The user specifies the dimentions of the canvas and 
+passes the starting point of the square or rectangle
+based on the x and y (whichh are the x and y from the top left
+of the canvas). shapes also have colors.
+
+The app produces an image and saves it to the desired path.
+
+
+sqaure:
+    x
+    y
+    side
+    colors
+    draw(canvas)
+    
+rectangle:
+    x
+    y
+    height
+    width
+    colors
+    draw(canvas)
+
+canvas:
+    width
+    height
+    color
+    make(imagepath)

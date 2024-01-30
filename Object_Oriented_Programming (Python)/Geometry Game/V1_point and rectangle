@@ -1,0 +1,45 @@
+
+
+#initiating Point class
+class Point:
+
+    def __init__(self,x,y):
+        self.x = x
+        self.y = y
+
+    def falls_in_rec(self , Rectangle):
+        if Rectangle.lowleft.x < self.x < Rectangle.upright.x  \
+            and Rectangle.lowleft.y < self.y < Rectangle.upright.y:
+            return True
+        else:
+            return False
+
+
+
+#initiating Rectangle class
+class Rectangle:
+
+    def __init__(self , lowleft , upright):
+        self.lowleft = lowleft        
+        self.upright = upright
+
+    def area(self):
+        cal_area = (self.upright.x- self.lowleft.x) * (self.upright.y - self.lowleft.y)
+        return cal_area
+
+
+#creating a Rectangle
+p1 = Point(1,0)
+p2 = Point(10,15)
+rectangle = Rectangle(p1,p2)
+
+
+#creating a user_point
+upx = 3               #float(input('enter your desired point x'))
+upy = 5             #float(input('enter your desired point y'))
+user_point = Point(upx,upy)
+
+
+#checking whether user_point is inside the rec
+user_point.falls_in_rec(rectangle)
+rectangle.area()
