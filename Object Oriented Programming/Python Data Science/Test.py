@@ -1,1 +1,0 @@
-l = list(range(20))

@@ -1,2 +1,0 @@
-PyYAML==6.0
-turtle==0.0.1
