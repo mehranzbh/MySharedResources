@@ -1,0 +1,6 @@
+ALTER USER 'root'@'localhost' IDENTIFIED BY '3OR74u';
+
+
+CREATE USER 'pythonuser'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'pythonuser'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
