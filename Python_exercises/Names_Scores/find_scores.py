@@ -22,7 +22,7 @@ for i in L:
             #print ("character score is :",chScore)
             chTotalScore += chScore
             #print ("is increasing: ",chTotalScore)
-    # calculating word score = word * order    
+    # calculating word score = word * counter    
     Scores[i]= chTotalScore * counter
     #print(Scores)
     counter += 1
