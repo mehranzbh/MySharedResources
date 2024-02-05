@@ -1,35 +1,36 @@
-#the image file in the root folder explained the problem
-#the names are extracted from the names.txt file in the same folder
+#import re
+#new_string = re.sub('character_to_remove', '', original_string)
 
-
-#reading the file
-f = open(".\\names.txt", "r")   #first argument gets the text file path
+#reading file and initiating variables
+f = open("C:\\My-files\\Codes\\Python Codes\\Names_Scores\\names.txt", "r")
 ss = f.read()
-
-#initiating the variables
 chTotalScore = 0
 Scores={}
+counter = 0
 
-#L = ['"MARY"', '"PATRICIA"', '"LINDA"', '"BARBARA"', '"ELIZABETH"', '"JENNIFER"']   #for debugging puposes
+# The list will look like this:
+# L = ['"MARY"', '"PATRICIA"', '"LINDA"', '"BARBARA"', '"ELIZABETH"', '"JENNIFER"']
 
-#creating a list from the string
+#creating a list from the text
 L = ss.split(",")
 
-#calculating the score
+#calculating the scores based on the word score and the place of the word in the sheet
 for i in L:
-    i = i[1:-1]
+    i = i[1:-1]    
     #print (i)
-    for ch in i:
+    for ch in i: #ch stands for character in a word - calculating the word score
         if 64 < ord(ch) < 98:
             chScore = ord (ch) - 65 + 1
             #print ("character score is :",chScore)
             chTotalScore += chScore
             #print ("is increasing: ",chTotalScore)
-    #Scores.append(chTotalScore)
-    Scores[i]=chTotalScore
+    # calculating word score = word * order    
+    Scores[i]= chTotalScore * counter
     #print(Scores)
-    
+    counter += 1
     chTotalScore = 0
 
-#printing the names with their respective scores
+
 print(Scores)
+
+
