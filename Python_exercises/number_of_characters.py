@@ -1,11 +1,15 @@
-##initiaitig the variables
-dic={}
-unique = []
+#this code counts the number of characters in a given string and provides the character as well as the count.
+
 #ss = "lkjfgw09349utv t89034uglkdnf iieraio"        #for testing purposes
 
 #---------------------------------------------------------#
 
+# getting the text from the user
 ss = input ("please enter the string")  # ask for a character from the user
+
+##initiaitig the variables
+dic={}
+unique = []
 
 #counting different character types
 ss = str (ss)
