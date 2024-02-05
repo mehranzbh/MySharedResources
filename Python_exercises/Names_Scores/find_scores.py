@@ -1,5 +1,3 @@
-#import re
-#new_string = re.sub('character_to_remove', '', original_string)
 
 #reading file and initiating variables
 f = open("C:\\My-files\\Codes\\Python Codes\\Names_Scores\\names.txt", "r")
