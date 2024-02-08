@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>JavaScript and DOM</title>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Sample JS code (working with DOM)</h1>
+        <p>creating a bottun which reveals a new text
+            <br>
+        </p>
+    </div>
+
+<body>
+    <p id="paragraph">Original Text</p>
+    <button id="changeTextBtn">Change Text</button>
+
+    <script>
+        // Selecting elements
+        const paragraph = document.getElementById('paragraph');
+        const changeTextBtn = document.getElementById('changeTextBtn');
+
+        // Changing content
+        function changeText() {
+            paragraph.textContent = 'Text has been changed!';
+        }
+
+        // Handling events
+        changeTextBtn.addEventListener('click', changeText);
+    </script>
+</body>
+</html>
